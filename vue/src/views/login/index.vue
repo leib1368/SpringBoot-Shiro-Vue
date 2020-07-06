@@ -4,12 +4,14 @@
              label-width="0px"
              class="card-box login-form">
       <h3 class="title">后台管理系统</h3>
+
       <el-form-item prop="username">
         <span class="svg-container svg-container_login">
           <svg-icon icon-class="user"/>
         </span>
         <el-input v-model="loginForm.username" autoComplete="on"/>
       </el-form-item>
+
       <el-form-item prop="password">
         <span class="svg-container">
           <svg-icon icon-class="password"></svg-icon>
@@ -17,6 +19,7 @@
         <el-input type="password" @keyup.enter.native="handleLogin" v-model="loginForm.password"
                   autoComplete="on"></el-input>
       </el-form-item>
+
       <el-form-item>
         <el-button type="primary" style="width:100%;" :loading="loading" @click.native.prevent="handleLogin">
           登录

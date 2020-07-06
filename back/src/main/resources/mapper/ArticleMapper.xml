@@ -34,4 +34,11 @@
         WHERE id = #{id}
     </update>
 
+    <update id="deleteArticle" parameterType="com.alibaba.fastjson.JSONObject">
+        UPDATE article
+        SET
+            delete_status = '2'
+        WHERE id = #{id}
+    </update>
+
 </mapper>

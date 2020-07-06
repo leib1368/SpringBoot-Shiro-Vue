@@ -29,4 +29,9 @@ public interface ArticleDao {
 	 * 更新文章
 	 */
 	int updateArticle(JSONObject jsonObject);
+
+	/**
+	 * 删除文章(非物理删除)
+	 */
+	int deleteArticle(JSONObject jsonObject);
 }

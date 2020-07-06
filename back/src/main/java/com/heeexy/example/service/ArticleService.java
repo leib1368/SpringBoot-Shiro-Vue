@@ -21,4 +21,10 @@ public interface ArticleService {
 	 * 更新文章
 	 */
 	JSONObject updateArticle(JSONObject jsonObject);
+
+
+	/**
+	 * 删除文章
+	 */
+	JSONObject deleteArticle(JSONObject jsonObject);
 }

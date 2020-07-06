@@ -21,9 +21,10 @@
           <span>{{scope.row.createTime}}</span>
         </template>
       </el-table-column>
-      <el-table-column align="center" label="管理" width="200" v-if="hasPerm('article:update')">
+      <el-table-column align="center" label="管理" width="230" v-if="hasPerm('article:update')">
         <template slot-scope="scope">
-          <el-button type="primary" icon="edit" @click="showUpdate(scope.$index)">修改</el-button>
+          <el-button type="primary" icon="el-icon-edit" @click="showUpdate(scope.$index)">修改</el-button>
+          <el-button type="danger" icon="el-icon-delete" @click="showDelete(scope.$index)">删除</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -61,7 +62,7 @@
         listLoading: false,//数据加载等待动画
         listQuery: {
           pageNum: 1,//页码
-          pageRow: 50,//每页条数
+          pageRow: 10,//每页条数
           name: ''
         },
         dialogStatus: 'create',
@@ -138,6 +139,19 @@
         //修改文章
         this.api({
           url: "/article/updateArticle",
+          method: "post",
+          data: this.tempArticle
+        }).then(() => {
+          this.getList();
+          this.dialogFormVisible = false
+        })
+      },
+      showDelete($index){
+        this.tempArticle.id = this.list[$index].id;
+        this.tempArticle.content = this.list[$index].content;
+        //删除文章
+        this.api({
+          url: "/article/deleteArticle",
           method: "post",
           data: this.tempArticle
         }).then(() => {
