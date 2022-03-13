@@ -21,18 +21,22 @@ public class TestDao {
         int i = articleDao.countArticle(jsonObject);
         System.out.println(i);
     }
+
     @Test
-    public void C(){
-        //before
-        System.out.println("AAA");
-        //after
-    }
-    @Test
-    public void D(){
-        //before
-        System.out.println("AAA");
-        //after
+    public void B(){
+        JSONObject jsonObject = new JSONObject();
+        //articleDao.listArticle(jsonObject);
+        int i = articleDao.countArticle(jsonObject);
+        System.out.println(i);
     }
 }
 
+/*
+* master 21点24分
+*
+*/
 
+
+/*
+*  21点25分
+*/
