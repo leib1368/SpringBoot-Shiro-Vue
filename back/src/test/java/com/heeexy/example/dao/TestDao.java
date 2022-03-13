@@ -21,6 +21,14 @@ public class TestDao {
         int i = articleDao.countArticle(jsonObject);
         System.out.println(i);
     }
+
+    @Test
+    public void B(){
+        JSONObject jsonObject = new JSONObject();
+        //articleDao.listArticle(jsonObject);
+        int i = articleDao.countArticle(jsonObject);
+        System.out.println(i);
+    }
 }
 
 /*
