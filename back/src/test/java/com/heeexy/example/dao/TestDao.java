@@ -27,6 +27,12 @@ public class TestDao {
         System.out.println("AAA");
         //after
     }
+    @Test
+    public void D(){
+        //before
+        System.out.println("AAA");
+        //after
+    }
 }
 
 
